@@ -6,17 +6,17 @@
 
 
 makeCacheMatrix <- function(x = matrix()) {
-    ## set initial state of inv to NULL
+    ## clears the inverse matrix variable
     inv <- NULL
     
-    ## write matrix to x. sets matrix variable and inv to global environment.
+    ## sets the primary (user-entered) matrix to x. scopes matrix variable and inv to global environment.
     set <- function (y) {
         x <<- y
         inv <<- NULL
         
     }
 
-    ## return the matrix 
+    ## shows the matrix x
     get <- function () x
     
     ## set inverse of the matrix to inv
@@ -39,6 +39,7 @@ cacheSolve <- function(x, ...) {
     
     inv <- x$getinv()
     
+    ## returns the cached inverse matrix if it exists
     if (!is.null(inv))  {
         message ("retrieving inverse cached in memory...")
         return (inv)
@@ -49,9 +50,9 @@ cacheSolve <- function(x, ...) {
     data <- x$get()
     inv <- solve (data, ...)
     x$setinv (inv)
-    inv
+    
     
     
     ##returns inv (inverse) of matrix.
-    
+    inv
 }
