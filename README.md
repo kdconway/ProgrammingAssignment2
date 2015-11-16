@@ -1,4 +1,4 @@
-* Assignment 2 - Peer reviewed Lexical scoping Assignment  
+### Assignment 2 - Peer reviewed Lexical scoping Assignment  
 
 Assignment (below) focus is on providing scoping outside the defined function. 
 Caching the inverse of a matrix is performed in the calling (global) environment
